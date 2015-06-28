@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include "LinkedListAdd.h"
+#include "LinkedListERR.h"
 #include <string.h>
 #include <malloc.h>
 
@@ -29,16 +30,16 @@ void addDataToHead(LinkedList **list, void *data){
 void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
   LinkedList *current = *list, *mid, *tail;
   
-  if(current == NULL){
-    current = linkListNew(data);
-    *list = current;
-    return;
-  }
-  
+  if(current == NULL)
+    Throw(LL_ERR_DATA_IS_NOT_EXIST);
+   
   while (current->data != addAfterThis){
     current = current->next;
+    
+    if(current == NULL)
+      Throw(LL_ERR_DATA_IS_NOT_EXIST);
   }
-  
+
   mid = linkListNew(data);
   tail = current->next;
   mid->next = tail;
