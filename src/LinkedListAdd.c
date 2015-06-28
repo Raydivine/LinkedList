@@ -40,8 +40,8 @@ void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
       Throw(LL_ERR_DATA_IS_NOT_EXIST);
   }
 
-  mid = linkListNew(data);
   tail = current->next;
+  mid = linkListNew(data);
   mid->next = tail;
   current->next = mid;
 }
