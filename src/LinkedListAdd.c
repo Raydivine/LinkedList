@@ -25,3 +25,15 @@ void addDataToHead(LinkedList **list, void *data){
   newHead->next = current;
   *list = newHead;
 }
+
+void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
+  LinkedList *current = *list;
+  
+  if(current == NULL){
+    current = linkListNew(data);
+    *list = current;
+    return;
+  }
+  
+  
+}

@@ -17,11 +17,11 @@ void tearDown(void)
 {
 }
 
-void test_addDataToHead_given_head_is_NULL_add_1_should_form_List_1(void){
+void test_addDataToMid_given_head_is_NULL_add_1_after_NULL_should_form_List_1(void){
   LinkedList *head = NULL;
   int one = 1;
   
-  addDataToHead( &head,&one);
+  addDataToMid( &head,&one, NULL);
   TEST_ASSERT_NOT_NULL(head);
   TEST_ASSERT_EQUAL(1, *(int*)head->data);
   TEST_ASSERT_NULL(HEAD_TWO);
@@ -29,15 +29,15 @@ void test_addDataToHead_given_head_is_NULL_add_1_should_form_List_1(void){
   clearLinkList(head);  
 }
 
-void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
+void xtest_addDataToHead_given_list_1_2_3_and_add_5_after_2_should_form_1_2_5_3(void){
   int one=1, two2=2, three=3, five=5;
   
   
   LinkedList *head = linkListNew(&one);
-  addDataToTail( &head,&two2);
-  addDataToTail( &head,&three);
+  addDataToTail( &head, &two2);
+  addDataToTail( &head, &three);
   
-  addDataToHead( &head,&five);
+  addDataToHead( &head, &five, &two);
   TEST_ASSERT_NOT_NULL(head);
   TEST_ASSERT_EQUAL(5, *(int*)head->data);
   TEST_ASSERT_EQUAL(1, *(int*)HEAD_TWO->data);
@@ -48,8 +48,9 @@ void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
   clearLinkList(head);  
 }
 
-void test_addDataToHead_given_list_1_2_3_and_add_NULL_should_form_NULL_1_2_3(void){
+void xtest_addDataToHead_given_list_1_2_3_and_add_NULL_should_form_NULL_1_2_3(void){
   int one=1, two2=2, three=3;
+  
   
   LinkedList *head = linkListNew(&one);
   addDataToTail(&head,&two2);
