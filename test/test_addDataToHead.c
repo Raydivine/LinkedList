@@ -30,11 +30,11 @@ void test_addDataToHead_given_head_is_NULL_add_1_should_form_List_1(void){
 }
 
 void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
-  int one=1, two2=2, three=3, five=5;
+  int one=1, two=2, three=3, five=5;
   
   
   LinkedList *head = linkListNew(&one);
-  addDataToTail( &head,&two2);
+  addDataToTail( &head,&two);
   addDataToTail( &head,&three);
   
   addDataToHead( &head,&five);
@@ -49,10 +49,10 @@ void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
 }
 
 void test_addDataToHead_given_list_1_2_3_and_add_NULL_should_form_NULL_1_2_3(void){
-  int one=1, two2=2, three=3;
+  int one=1, two=2, three=3;
   
   LinkedList *head = linkListNew(&one);
-  addDataToTail(&head,&two2);
+  addDataToTail(&head,&two);
   addDataToTail(&head,&three);
   
   addDataToHead(&head,NULL);

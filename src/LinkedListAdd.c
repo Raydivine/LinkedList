@@ -27,7 +27,7 @@ void addDataToHead(LinkedList **list, void *data){
 }
 
 void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
-  LinkedList *current = *list;
+  LinkedList *current = *list, *mid, *tail;
   
   if(current == NULL){
     current = linkListNew(data);
@@ -35,5 +35,12 @@ void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
     return;
   }
   
+  while (current->data != addAfterThis){
+    current = current->next;
+  }
   
+  mid = linkListNew(data);
+  tail = current->next;
+  mid->next = tail;
+  current->next = mid;
 }
