@@ -17,3 +17,11 @@ void addDataToTail(LinkedList **list, void *data){
   }
   current->next = linkListNew(data);
 }
+
+void addDataToHead(LinkedList **list, void *data){
+  LinkedList *current = *list, *newHead;
+  
+  newHead = linkListNew(data);
+  newHead->next = current;
+  *list = newHead;
+}

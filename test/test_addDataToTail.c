@@ -60,6 +60,16 @@ void test_addDataToTail_given_head_is_NULL_and_add_1_to_tail_should_form_head_is
   clearLinkList(link);
 }
 
+void test_addDataToTail_given_head_is_NULL_and_NULL_to_tail_should_form_head_carry_NULL(void){
+  LinkedList *link = NULL;
+
+  addDataToTail( &link, NULL);
+  TEST_ASSERT_NOT_NULL(link);
+  TEST_ASSERT_NULL(link->data);
+  TEST_ASSERT_NULL(link->next);
+  clearLinkList(link);
+}
+
 void test_addDataToTail_given_head_carry_1_and_add_2_3_4_5_to_tail_should_from_list_of_data_1_2_3_4_5(void){
   int one = 1, two = 2, three =3, four =4, five =5;
   LinkedList *link = linkListNew(&one);
