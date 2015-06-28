@@ -46,3 +46,60 @@ void test_removeDataFromList_given_list_1_2_3_and_but_remove_5_should_throw_LL_E
 
   clearLinkList(head);   
 }
+
+void test_removeDataFromList_given_list_1_and_remove_1_should_form_NULL(void){
+  int one=1;
+  
+  LinkedList *head = linkListNew(&one);
+ 
+  removeDataFromList( &head, &one);
+  TEST_ASSERT_NULL(head);
+  
+  clearLinkList(head);  
+}
+
+void test_removeDataFromList_given_list_1_2_and_remove_1_should_form_2(void){
+  int one=1, two=2;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  
+  removeDataFromList( &head, &one);
+  TEST_ASSERT_NOT_NULL(head);
+  TEST_ASSERT_EQUAL(2, *(int*)head->data);
+  TEST_ASSERT_NULL(head->next);
+  
+  clearLinkList(head);    
+}
+
+void test_removeDataFromList_given_list_1_2_3_and_but_remove_2_should_form_1_3(void){
+
+  int one=1, two=2, three=3, five=5;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  addDataToTail( &head, &three);
+  
+  removeDataFromList( &head, &two);
+  TEST_ASSERT_NOT_NULL(head);
+  TEST_ASSERT_EQUAL(1, *(int*)head->data);
+  TEST_ASSERT_EQUAL(3, *(int*)HEAD_TWO->data);
+  TEST_ASSERT_NULL(HEAD_THREE);
+  
+  clearLinkList(head);   
+}
+
+void test_removeDataFromList_given_list_1_2_and_remove_2_should_form_1(void){
+  int one=1, two=2;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  
+  removeDataFromList( &head, &two);
+  TEST_ASSERT_NOT_NULL(head);
+  TEST_ASSERT_EQUAL(1, *(int*)head->data);
+  TEST_ASSERT_NULL(head->next);
+  
+  clearLinkList(head);    
+}
+

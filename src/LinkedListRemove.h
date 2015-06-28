@@ -3,5 +3,6 @@
 #include "LinkedList.h"
 
 void removeDataFromList(LinkedList **list, void *removeData);
+void linkToNext(LinkedList **list);
 
 #endif // LinkedListReomve_H

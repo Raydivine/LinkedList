@@ -31,15 +31,15 @@ void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
   LinkedList *current = *list, *mid, *tail;
 
   while(current != NULL){ 
-    if(current->data != addAfterThis)
-      current = current->next;    
-    else{
+    if(current->data == addAfterThis){
       tail = current->next;
       mid = linkListNew(data);
       mid->next = tail;
       current->next = mid;
-      return;
+      return; 
     }
+    current = current->next;     
   }
+  
   Throw(LL_ERR_DATA_IS_NOT_EXIST);
 }

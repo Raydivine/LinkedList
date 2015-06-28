@@ -11,10 +11,11 @@ LinkedList *linkListNew(void *data){
 }
 
 void clearLinkList(LinkedList *link){
-  if(link!=NULL){  
-    if(link->next!=NULL){
-      clearLinkList(link->next);  
-    }
-    free(link);
+  LinkedList *tmp;
+  
+  while (link != NULL){
+    tmp = link;
+    link = link->next;
+    free(tmp);
   }
 }
