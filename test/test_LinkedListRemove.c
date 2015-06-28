@@ -1,6 +1,7 @@
 #include "unity.h"
 #include "LinkedList.h"
 #include "LinkedListRemove.h"
+#include "LinkedListAdd.h"
 #include "CException.h"
 
 #define HEAD_TWO      head->next
@@ -28,4 +29,20 @@ void test_removeDataFromList_given_head_is_NULL_should_throw_LL_ERR_DATA_IS_NOT_
   }Catch(err)
 
   clearLinkList(head); 
+}
+
+void test_removeDataFromList_given_list_1_2_3_and_but_remove_5_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
+  CEXCEPTION_T err;
+  int one=1, two=2, three=3, five=5;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  addDataToTail( &head, &three);
+  
+  Try{
+    removeDataFromList( &head, &five);
+    TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
+  }Catch(err)
+
+  clearLinkList(head);   
 }

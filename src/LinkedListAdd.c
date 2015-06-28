@@ -29,19 +29,17 @@ void addDataToHead(LinkedList **list, void *data){
 
 void addDataToMid(LinkedList **list, void *data, void *addAfterThis){
   LinkedList *current = *list, *mid, *tail;
-  
-  if(current == NULL)
-    Throw(LL_ERR_DATA_IS_NOT_EXIST);
-   
-  while (current->data != addAfterThis){
-    current = current->next;
-    
-    if(current == NULL)
-      Throw(LL_ERR_DATA_IS_NOT_EXIST);
-  }
 
-  tail = current->next;
-  mid = linkListNew(data);
-  mid->next = tail;
-  current->next = mid;
+  while(current != NULL){ 
+    if(current->data != addAfterThis)
+      current = current->next;    
+    else{
+      tail = current->next;
+      mid = linkListNew(data);
+      mid->next = tail;
+      current->next = mid;
+      return;
+    }
+  }
+  Throw(LL_ERR_DATA_IS_NOT_EXIST);
 }
