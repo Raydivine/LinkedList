@@ -47,6 +47,22 @@ void test_removeDataFromList_given_list_1_2_3_and_but_remove_5_should_throw_LL_E
   clearLinkList(head);   
 }
 
+void test_removeDataFromList_given_list_1_2_3_and_but_remove_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
+  CEXCEPTION_T err;
+  int one=1, two=2, three=3, five=5;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  addDataToTail( &head, &three);
+  
+  Try{
+    removeDataFromList( &head, NULL);
+    TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
+  }Catch(err)
+
+  clearLinkList(head);   
+}
+
 void test_removeDataFromList_given_list_1_and_remove_1_should_form_NULL(void){
   int one=1;
   
