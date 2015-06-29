@@ -30,6 +30,9 @@ void removeDataFromList(LinkedList **list, void *removeData){
 void linkToNext(LinkedList **list){
   LinkedList *current = *list, *tail;
   
+  if(current == NULL)
+    return;
+  
   tail = current->next;
   free(current);
   current = tail;

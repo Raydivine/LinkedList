@@ -17,6 +17,58 @@ void tearDown(void)
 {
 }
 
+void test_linkToNext_given_list_1_should_form_NULL(void){
+  int one=1;
+  
+  LinkedList *head = linkListNew(&one);
+ 
+  linkToNext(&head);
+  TEST_ASSERT_NULL(head);
+  
+  clearLinkList(head); 
+}
+
+void test_linkToNext_given_list_1_2_should_form_2(void){
+  int one=1, two=2;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  
+  linkToNext( &head);
+  TEST_ASSERT_NOT_NULL(head);
+  TEST_ASSERT_EQUAL(2, *(int*)head->data);
+  TEST_ASSERT_NULL(head->next);
+  
+  clearLinkList(head);  
+}
+
+void test_linkToNext_given_list_1_2_4_should_form_2_4(void){
+  int one=1, two=2, four=4;
+  
+  LinkedList *head = linkListNew(&one);
+  addDataToTail( &head, &two);
+  addDataToTail( &head, &four);
+  
+  linkToNext( &head);
+  TEST_ASSERT_NOT_NULL(head);
+  TEST_ASSERT_EQUAL(2, *(int*)head->data);
+  TEST_ASSERT_EQUAL(4, *(int*)HEAD_TWO->data);
+  TEST_ASSERT_NULL(HEAD_THREE);
+  
+  clearLinkList(head);  
+}
+
+void test_linkToNext_given_list_NULL_should_form_NULL(void){
+  int one=1, two=2, four=4;
+  
+  LinkedList *head = NULL;
+  
+  linkToNext( &head);
+  TEST_ASSERT_NULL(head);
+  
+  clearLinkList(head);  
+}
+
 void test_removeDataFromList_given_head_is_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
   CEXCEPTION_T err;
   int one=1, two=2, three=3, five=5;
@@ -31,7 +83,7 @@ void test_removeDataFromList_given_head_is_NULL_should_throw_LL_ERR_DATA_IS_NOT_
   clearLinkList(head); 
 }
 
-void test_removeDataFromList_given_list_1_2_3_and_but_remove_5_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
+void test_removeDataFromList_given_list_1_2_3_but_remove_5_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
   CEXCEPTION_T err;
   int one=1, two=2, three=3, five=5;
   
@@ -47,7 +99,7 @@ void test_removeDataFromList_given_list_1_2_3_and_but_remove_5_should_throw_LL_E
   clearLinkList(head);   
 }
 
-void test_removeDataFromList_given_list_1_2_3_and_but_remove_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
+void test_removeDataFromList_given_list_1_2_3_but_remove_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
   CEXCEPTION_T err;
   int one=1, two=2, three=3, five=5;
   
