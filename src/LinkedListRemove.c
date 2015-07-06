@@ -8,23 +8,22 @@
 void removeDataFromList(LinkedList **list, void *removeData){
   LinkedList *current = *list, *tail;
     
-  if(current == NULL)
-    Throw(LL_ERR_DATA_IS_NOT_EXIST);
-  else if(current->data == removeData){
-    linkToNext(&current);
-    *list = current;
-    return;  
-  }
-  
-  while(current->next != NULL){ 
-    if(current->next->data == removeData){
-      linkToNext( &(current->next) );
-      return;
+  if(current != NULL){
+    if(current->data == removeData){
+      linkToNext(&current);
+      *list = current;
+      return;  
     }
-    current = current->next;    
+    while(current->next != NULL){ 
+      if(current->next->data == removeData){
+        linkToNext( &(current->next) );
+        return;
+      }
+      current = current->next;    
+    }
   }
-  Throw(LL_ERR_DATA_IS_NOT_EXIST);
   
+  Throw(LL_ERR_DATA_IS_NOT_EXIST);
 }
 
 void linkToNext(LinkedList **list){
