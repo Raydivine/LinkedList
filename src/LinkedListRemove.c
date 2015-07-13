@@ -34,6 +34,5 @@ void freeAndJump(LinkedList **list){
   
   tail = current->next;
   free(current);
-  current = tail;
-  *list = current;
+  *list = tail;
 }
