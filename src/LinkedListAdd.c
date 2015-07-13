@@ -10,13 +10,13 @@ void addDataToTail(LinkedList **list, void *data){
   if(current == NULL){
     current = linkListNew(data);
     *list = current;
-    return;
   }
-  
-  while (current->next != NULL){
-    current = current->next;
+  else{
+    while (current->next != NULL){
+      current = current->next;
+    }
+    current->next = linkListNew(data);
   }
-  current->next = linkListNew(data);
 }
 
 void addDataToHead(LinkedList **list, void *data){
