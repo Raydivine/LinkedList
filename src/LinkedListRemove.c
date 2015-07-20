@@ -10,13 +10,13 @@ void removeDataFromList(LinkedList **list, void *removeData){
     
   if(current != NULL){
     if(current->data == removeData){
-      freeAndJump(&current);
+      removeHead(&current);
       *list = current;
       return;  
     }
     while(current->next != NULL){ 
       if(current->next->data == removeData){
-        freeAndJump( &(current->next) );
+        removeHead( &(current->next) );
         return;
       }
       current = current->next;    
@@ -26,7 +26,7 @@ void removeDataFromList(LinkedList **list, void *removeData){
   Throw(LL_ERR_DATA_IS_NOT_EXIST);
 }
 
-void freeAndJump(LinkedList **list){
+void removeHead(LinkedList **list){
   LinkedList *current = *list, *tail;
   
   if(current == NULL)
