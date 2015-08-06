@@ -22,7 +22,6 @@ void removeDataFromList(LinkedList **list, void *removeData){
       current = current->next;    
     }
   }
-  
   Throw(LL_ERR_DATA_IS_NOT_EXIST);
 }
 
@@ -41,12 +40,11 @@ LinkedList *returnHead(LinkedList **list){
   LinkedList *current = *list, *tail;
   
   if(current == NULL)
-    return;
+    return NULL;
   
   tail = current->next;
   *list = tail;
   
   current->next = NULL;
   return current;
-  
 }
