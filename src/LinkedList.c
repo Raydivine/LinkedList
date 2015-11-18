@@ -19,3 +19,15 @@ void clearLinkList(LinkedList *link){
     free(tmp);
   }
 }
+
+int isDataInList(LinkedList **list, void *data){
+  LinkedList *current = *list;
+  
+  while(current!=NULL){
+    if(current->data == data)
+      return 1;
+    else  current = current->next;  
+  }
+  
+  return 0;
+}

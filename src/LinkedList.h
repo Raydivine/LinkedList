@@ -10,5 +10,6 @@ struct LinkedList{
 
 LinkedList *linkListNew(void *data); 
 void clearLinkList(LinkedList *link); 
+int isDataInList(LinkedList **list, void *data);
 
 #endif // LinkedList_H
