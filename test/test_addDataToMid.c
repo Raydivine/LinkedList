@@ -27,7 +27,7 @@ void test_addDataToMid_given_head_is_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(
     TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
   }Catch(err)
 
-  clearLinkList(head); 
+  clearLinkList(&head); 
 }
 
 void test_addDataToMid_given_list_1_2_3_and_add_data_after_5_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
@@ -43,7 +43,7 @@ void test_addDataToMid_given_list_1_2_3_and_add_data_after_5_should_throw_LL_ERR
     TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
   }Catch(err)
 
-  clearLinkList(head);   
+  clearLinkList(&head);   
 }
 
 void test_addDataToMid_given_list_1_and_add_5_after_1_should_form_1_5(void){
@@ -57,7 +57,7 @@ void test_addDataToMid_given_list_1_and_add_5_after_1_should_form_1_5(void){
   TEST_ASSERT_EQUAL(5, *(int*)HEAD_TWO->data);
   TEST_ASSERT_NULL(HEAD_THREE);
 
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_addDataToMid_given_list_1_2_3_and_add_5_after_2_should_form_1_2_5_3(void){
@@ -75,7 +75,7 @@ void test_addDataToMid_given_list_1_2_3_and_add_5_after_2_should_form_1_2_5_3(vo
   TEST_ASSERT_EQUAL(3, *(int*)HEAD_FOUR->data);
   TEST_ASSERT_NULL(HEAD_FIVE);
 
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_addDataToMid_given_list_1_2_3_and_add_NULL_after_2_should_form_1_2_NULL_3(void){
@@ -94,7 +94,7 @@ void test_addDataToMid_given_list_1_2_3_and_add_NULL_after_2_should_form_1_2_NUL
   TEST_ASSERT_EQUAL(3, *(int*)HEAD_FOUR->data);
   TEST_ASSERT_NULL(HEAD_FIVE);
 
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 

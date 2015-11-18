@@ -26,7 +26,7 @@ void test_addDataToHead_given_head_is_NULL_add_1_should_form_List_1(void){
   TEST_ASSERT_EQUAL(1, *(int*)head->data);
   TEST_ASSERT_NULL(HEAD_TWO);
   
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
@@ -45,7 +45,7 @@ void test_addDataToHead_given_list_1_2_3_and_add_5_should_form_5_1_2_3(void){
   TEST_ASSERT_EQUAL(3, *(int*)HEAD_FOUR->data);
   TEST_ASSERT_NULL(HEAD_FIVE);
 
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_addDataToHead_given_list_1_2_3_and_add_NULL_should_form_NULL_1_2_3(void){
@@ -63,7 +63,7 @@ void test_addDataToHead_given_list_1_2_3_and_add_NULL_should_form_NULL_1_2_3(voi
   TEST_ASSERT_EQUAL(3, *(int*)HEAD_FOUR->data);
   TEST_ASSERT_NULL(HEAD_FIVE);
 
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 

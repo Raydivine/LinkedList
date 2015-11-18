@@ -28,7 +28,7 @@ void test_removeDataFromList_given_head_is_NULL_should_throw_LL_ERR_DATA_IS_NOT_
     TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
   }Catch(err)
 
-  clearLinkList(head); 
+  clearLinkList(&head); 
 }
 
 void test_removeDataFromList_given_list_1_2_3_but_remove_5_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
@@ -44,7 +44,7 @@ void test_removeDataFromList_given_list_1_2_3_but_remove_5_should_throw_LL_ERR_D
     TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
   }Catch(err)
 
-  clearLinkList(head);   
+  clearLinkList(&head);   
 }
 
 void test_removeDataFromList_given_list_1_2_3_but_remove_NULL_should_throw_LL_ERR_DATA_IS_NOT_EXIST(void){
@@ -60,7 +60,7 @@ void test_removeDataFromList_given_list_1_2_3_but_remove_NULL_should_throw_LL_ER
     TEST_FAIL_MESSAGE("Expected LL_ERR_DATA_IS_NOT_EXIST to be thrown. But receive none");
   }Catch(err)
 
-  clearLinkList(head);   
+  clearLinkList(&head);   
 }
 
 void test_removeDataFromList_given_list_1_and_remove_1_should_form_NULL(void){
@@ -71,7 +71,8 @@ void test_removeDataFromList_given_list_1_and_remove_1_should_form_NULL(void){
   removeDataFromList( &head, &one);
   TEST_ASSERT_NULL(head);
   
-  clearLinkList(head);  
+  clearLinkList(&head);  
+
 }
 
 void test_removeDataFromList_given_list_1_2_and_remove_1_should_form_2(void){
@@ -85,7 +86,7 @@ void test_removeDataFromList_given_list_1_2_and_remove_1_should_form_2(void){
   TEST_ASSERT_EQUAL(2, *(int*)head->data);
   TEST_ASSERT_NULL(head->next);
   
-  clearLinkList(head);    
+  clearLinkList(&head);    
 }
 
 void test_removeDataFromList_given_list_1_2_3_and_but_remove_2_should_form_1_3(void){
@@ -102,7 +103,7 @@ void test_removeDataFromList_given_list_1_2_3_and_but_remove_2_should_form_1_3(v
   TEST_ASSERT_EQUAL(3, *(int*)HEAD_TWO->data);
   TEST_ASSERT_NULL(HEAD_THREE);
   
-  clearLinkList(head);   
+  clearLinkList(&head);   
 }
 
 void test_removeDataFromList_given_list_1_2_and_remove_2_should_form_1(void){
@@ -116,6 +117,6 @@ void test_removeDataFromList_given_list_1_2_and_remove_2_should_form_1(void){
   TEST_ASSERT_EQUAL(1, *(int*)head->data);
   TEST_ASSERT_NULL(head->next);
   
-  clearLinkList(head);    
+  clearLinkList(&head);    
 }
 

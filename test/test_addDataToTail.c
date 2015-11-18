@@ -20,7 +20,7 @@ void test_addDataToTail_given_head_carry_1_and_add_2_to_tail_should_from_list_of
   TEST_ASSERT_NOT_NULL(link->next);
   TEST_ASSERT_EQUAL(2, *(int*)link->next->data);
   TEST_ASSERT_NULL(link->next->next);
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 
 void test_addDataToTail_given_head_carry_NULL_add_2_to_tail_should_form_list_of_data_NULL_2(void){
@@ -32,7 +32,7 @@ void test_addDataToTail_given_head_carry_NULL_add_2_to_tail_should_form_list_of_
   TEST_ASSERT_NULL(link->data);
   TEST_ASSERT_NOT_NULL(link->next);
   TEST_ASSERT_EQUAL(2, *(int*)link->next->data);
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 
 void test_addDataToTail_given_head_carry_1_and_add_NULL_to_tail_should_form_list_of_data_1_NULL(void){
@@ -45,7 +45,7 @@ void test_addDataToTail_given_head_carry_1_and_add_NULL_to_tail_should_form_list
   TEST_ASSERT_NOT_NULL(link->next);
   TEST_ASSERT_NULL(link->next->data);
   TEST_ASSERT_NULL(link->next->next);
-  clearLinkList(link);
+  clearLinkList(&link);
   
 }
 
@@ -57,7 +57,7 @@ void test_addDataToTail_given_head_is_NULL_and_add_1_to_tail_should_form_head_is
   TEST_ASSERT_NOT_NULL(link);
   TEST_ASSERT_EQUAL(1, *(int*)link->data);
   TEST_ASSERT_NULL(link->next);
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 
 void test_addDataToTail_given_head_is_NULL_and_NULL_to_tail_should_form_head_carry_NULL(void){
@@ -67,7 +67,7 @@ void test_addDataToTail_given_head_is_NULL_and_NULL_to_tail_should_form_head_car
   TEST_ASSERT_NOT_NULL(link);
   TEST_ASSERT_NULL(link->data);
   TEST_ASSERT_NULL(link->next);
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 
 void test_addDataToTail_given_head_carry_1_and_add_2_3_4_5_to_tail_should_from_list_of_data_1_2_3_4_5(void){
@@ -87,7 +87,7 @@ void test_addDataToTail_given_head_carry_1_and_add_2_3_4_5_to_tail_should_from_l
   TEST_ASSERT_EQUAL(5, *(int*)link->next->next->next->next->data);
   TEST_ASSERT_NULL(link->next->next->next->next->next);
 
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 
 void test_addDataToTail_given_head_is_NULL_and_add_1_2_3_4_5_to_tail_should_from_list_of_data_1_2_3_4_5(void){
@@ -108,6 +108,6 @@ void test_addDataToTail_given_head_is_NULL_and_add_1_2_3_4_5_to_tail_should_from
   TEST_ASSERT_EQUAL(5, *(int*)link->next->next->next->next->data);
   TEST_ASSERT_NULL(link->next->next->next->next->next);
 
-  clearLinkList(link);
+  clearLinkList(&link);
 }
 

@@ -29,7 +29,7 @@ void test_returnHead_given_list_1_should_form_NULL_and_return_1(void){
 
   TEST_ASSERT_NULL(head);
   
-  clearLinkList(head); 
+  clearLinkList(&head); 
 }
 
 void test_returnHead_given_list_1_2_should_form_2and_return_1(void){
@@ -47,7 +47,7 @@ void test_returnHead_given_list_1_2_should_form_2and_return_1(void){
   TEST_ASSERT_EQUAL(2, *(int*)head->data);
   TEST_ASSERT_NULL(HEAD_TWO);
   
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_returnHead_given_list_1_2_4_should_form_2_4_and_return_1(void){
@@ -67,7 +67,7 @@ void test_returnHead_given_list_1_2_4_should_form_2_4_and_return_1(void){
   TEST_ASSERT_EQUAL(4, *(int*)HEAD_TWO->data);
   TEST_ASSERT_NULL(HEAD_THREE);
   
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }
 
 void test_returnHead_given_list_NULL_should_return_NULL(void){
@@ -79,5 +79,5 @@ void test_returnHead_given_list_NULL_should_return_NULL(void){
   TEST_ASSERT_NULL(remove);
   TEST_ASSERT_NULL(head);
   
-  clearLinkList(head);  
+  clearLinkList(&head);  
 }

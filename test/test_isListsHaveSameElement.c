@@ -25,8 +25,8 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_f_should_return
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }
 
 void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_a_should_return_1(void){
@@ -42,8 +42,8 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_a_should_return
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }
 
 void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_b_should_return_1(void){
@@ -59,8 +59,8 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_b_should_return
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }
 
 void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_c_e_b_should_return_1(void){
@@ -76,8 +76,8 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_c_e_b_should_return
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }
 
 void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_NULL_should_return_0(void){
@@ -91,8 +91,8 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_NULL_should_return_
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }
 
 void test_isListsHaveSameElement_given_list1_NULL_and_list2_c_e_b_should_return_1(void){
@@ -106,6 +106,6 @@ void test_isListsHaveSameElement_given_list1_NULL_and_list2_c_e_b_should_return_
   int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
-  clearLinkList(list1);  
-  clearLinkList(list2);  
+  clearLinkList(&list1);  
+  clearLinkList(&list2);  
 }

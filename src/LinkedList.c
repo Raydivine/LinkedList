@@ -10,14 +10,15 @@ LinkedList *linkListNew(void *data){
   return link;
 }
 
-void clearLinkList(LinkedList *link){
-  LinkedList *tmp;
+void clearLinkList(LinkedList **link){
+  LinkedList *current = *link, *next;
   
-  while (link != NULL){
-    tmp = link;
-    link = link->next;
-    free(tmp);
+  while (current != NULL) {
+    next = current->next; 
+    free(current); 
+    current = next; 
   }
+  *link = NULL;
 }
 
 int isDataInList(LinkedList *list, void *data){
