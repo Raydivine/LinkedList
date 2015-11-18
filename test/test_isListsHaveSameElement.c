@@ -22,7 +22,7 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_f_should_return
   addDataToTail( &list2, &e);
   addDataToTail( &list2, &f);
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(list1);  
@@ -39,7 +39,7 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_a_should_return
   addDataToTail( &list2, &e);
   addDataToTail( &list2, &a);
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(list1);  
@@ -56,7 +56,7 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_d_e_b_should_return
   addDataToTail( &list2, &e);
   addDataToTail( &list2, &b);
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(list1);  
@@ -73,7 +73,7 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_c_e_b_should_return
   addDataToTail( &list2, &e);
   addDataToTail( &list2, &b);
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(list1);  
@@ -88,7 +88,7 @@ void test_isListsHaveSameElement_given_list1_a_b_c_and_list2_NULL_should_return_
   
   LinkedList *list2 = NULL;
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(list1);  
@@ -103,7 +103,7 @@ void test_isListsHaveSameElement_given_list1_NULL_and_list2_c_e_b_should_return_
   addDataToTail( &list2, &e);
   addDataToTail( &list2, &b);
   
-  int ans = isListsHaveSameElement(&list1, &list2);
+  int ans = isListsHaveSameElement(list1, list2);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(list1);  

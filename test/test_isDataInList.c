@@ -16,7 +16,7 @@ void tearDown(void){}
 void test_isDataInList_given_head_is_NULL_should_return0(void){
   LinkedList *head = NULL;
 
-  int ans = isDataInList( &head, &three);
+  int ans = isDataInList( head, &three);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(head); 
@@ -28,7 +28,7 @@ void test_isDataInList_given_list_1_2_3_and_search_5_should_return_0(void){
   addDataToTail( &head, &two);
   addDataToTail( &head, &three);
   
-  int ans = isDataInList( &head, &five);
+  int ans = isDataInList( head, &five);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(head);   
@@ -40,7 +40,7 @@ void test_isDataInList_given_list_1_2_3_and_search_3_should_return_1(void){
   addDataToTail( &head, &two);
   addDataToTail( &head, &three);
   
-  int ans = isDataInList( &head, &three);
+  int ans = isDataInList( head, &three);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(head);   
@@ -52,7 +52,7 @@ void test_isDataInList_given_list_1_2_3_and_search_1_should_return_1(void){
   addDataToTail( &head, &two);
   addDataToTail( &head, &three);
   
-  int ans = isDataInList( &head, &one);
+  int ans = isDataInList( head, &one);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(head);   
@@ -64,7 +64,7 @@ void test_isDataInList_given_list_1_2_3_and_search_2_should_return_1(void){
   addDataToTail( &head, &two);
   addDataToTail( &head, &three);
   
-  int ans = isDataInList( &head, &two);
+  int ans = isDataInList( head, &two);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(head);   
@@ -80,12 +80,11 @@ void test_isDataInList_given_list_a_b_c_d_s_and_search_s_should_return_1(void){
   addDataToTail( &head, &d);
   addDataToTail( &head, &s);
   
-  int ans = isDataInList( &head, &s);
+  int ans = isDataInList( head, &s);
   TEST_ASSERT_EQUAL(1, ans);
 
   clearLinkList(head);   
 }
-
 
 void test_isDataInList_given_list_a_b_c_d_s_and_search_t_should_return_0(void){
   char a,b,c,d,s,t;
@@ -96,7 +95,7 @@ void test_isDataInList_given_list_a_b_c_d_s_and_search_t_should_return_0(void){
   addDataToTail( &head, &d);
   addDataToTail( &head, &s);
   
-  int ans = isDataInList( &head, &t);
+  int ans = isDataInList( head, &t);
   TEST_ASSERT_EQUAL(0, ans);
 
   clearLinkList(head);   
